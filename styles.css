@@ -1,0 +1,217 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="file"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#fileInfo {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+}
+
+#map {
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.custom-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+    width: 30px !important;
+    height: 30px !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.start-icon { background-color: #4CAF50; }
+.end-icon { background-color: #4CAF50; }
+.rain-icon { background-color: #2196F3; }
+.coffee-icon { background-color: #795548; }
+
+.subtitle {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#addCoffeeStop {
+    margin-top: 20px;
+    background-color: #2196F3;
+}
+
+#addCoffeeStop:hover {
+    background-color: #1976D2;
+}
+
+.weather-icon {
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+.wind-arrow {
+    font-size: 20px;
+    color: #2196F3;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .left-section, .right-section {
+        margin: 10px 0;
+    }
+    
+    #map {
+        height: 300px;
+    }
+}
+
+/* Fun animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+h1 i, h2 i {
+    animation: pulse 2s infinite;
+}
+
+input:focus, button:hover {
+    animation: pulse 0.5s;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Add these styles */
+.weather-icon.sunny {
+    color: #FFD700; /* Yellow */
+}
+
+.weather-icon.cloudy {
+    color: #808080; /* Grey */
+}
+
+.weather-icon.rainy {
+    color: #4169E1; /* Royal Blue */
+}
+
+.end-icon {
+    background-color: #4CAF50; /* Green, same as start icon */
+}
+
+@keyframes dashAnimation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.wind-line {
+    animation: dashAnimation 1s linear infinite;
+}
+
+/* Remove bounce animation from inputs */
+input {
+    animation: none;
+    transition: none;
+}
+
+input:focus, input:hover {
+    animation: none !important;
+    transition: none !important;
+}
